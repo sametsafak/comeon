@@ -1,5 +1,4 @@
 // DEV acl can see every menu item in sidebar menu
-
 export default [
   {
     name: 'Games',
