@@ -2,7 +2,9 @@
   <div>
     <div class="game-item" :key="game.code" v-for="game in games">
       <div class="d-md-flex">
-        <div class="pe-0 pe-md-2 mb-3 w-100 max-width-150-px mx-auto mx-md-0">
+        <div
+          class="pe-0 pe-md-2 mb-3 mb-sm-0 w-100 max-width-150-px mx-auto mx-md-0"
+        >
           <img
             class="rounded overflow-hidden"
             :src="getImgUrl(game.icon)"

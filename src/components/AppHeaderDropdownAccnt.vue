@@ -50,7 +50,16 @@
         <div class="px-3">
           <AppHeaderThemeSelector />
         </div>
+
         <CDropdownDivider />
+
+        <!-- dev only switch -->
+        <div v-if="showDevAclSwitch">
+          <div class="px-3">
+            <DevSwitch />
+          </div>
+          <CDropdownDivider />
+        </div>
       </div>
 
       <CDropdownItem @click="onClickLogout">
@@ -63,6 +72,8 @@
 <script>
 import avatar from '@/assets/images/avatar/default-user.png'
 import AppHeaderThemeSelector from './AppHeaderThemeSelector'
+import DevSwitch from './DevSwitch'
+
 import getImgUrl from '@/helpers/get-img-helper'
 
 import { mapState, mapActions } from 'vuex'
@@ -70,6 +81,7 @@ export default {
   name: 'AppHeaderDropdownAccnt',
   components: {
     AppHeaderThemeSelector,
+    DevSwitch,
   },
   data() {
     return {
@@ -97,6 +109,9 @@ export default {
   },
   computed: {
     ...mapState('memberModule', ['acl', 'member']),
+    showDevAclSwitch() {
+      return process.env.VUE_APP_DEV_ACL === 'true' && this.acl
+    },
   },
 }
 </script>

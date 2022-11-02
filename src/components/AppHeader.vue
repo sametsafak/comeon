@@ -35,27 +35,9 @@
         class="header-nav flex-wrap align-items-center ms-auto justify-content-end"
       >
         <!-- dev only switch -->
-        <div
-          v-if="showDevAclSwitch"
-          class="d-flex rounded border px-2 py-1 me-3 bg-gradient bg-opacity-75"
-          :class="
-            acl?.includes('DEV')
-              ? 'bg-info border-primary text-white'
-              : 'bg-light'
-          "
-        >
-          <div
-            class="d-flex align-items-center form-control-remove-margin-bottom"
-          >
-            <!-- <router-link to="/demo/vuex-test" class="me-2">vuex</router-link> -->
-            <CFormSwitch
-              class="flex-row-reverse bg-success"
-              label="dev"
-              id="dev-acl"
-              :checked="acl?.includes('DEV')"
-              @change="TOGGLE_DEV_ACL({ show: $event.target.checked })"
-            />
-          </div>
+        <!-- visible only lg and upper -->
+        <div v-if="showDevAclSwitch" class="d-none d-lg-flex me-3">
+          <DevSwitch />
         </div>
 
         <!-- visible only lg and upper -->
@@ -80,11 +62,12 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 
 // import AppBreadcrumb from './AppBreadcrumb'
 import AppHeaderDropdownAccnt from './AppHeaderDropdownAccnt'
 import AppHeaderThemeSelector from './AppHeaderThemeSelector'
+import DevSwitch from './DevSwitch.vue'
 
 import getImgUrl from '@/helpers/get-img-helper'
 
@@ -94,14 +77,12 @@ export default {
     // AppBreadcrumb,
     AppHeaderDropdownAccnt,
     AppHeaderThemeSelector,
+    DevSwitch,
   },
   data() {
     return {
       getImgUrl,
     }
-  },
-  methods: {
-    ...mapMutations('memberModule', ['TOGGLE_DEV_ACL']),
   },
   computed: {
     ...mapState('memberModule', ['acl']),
