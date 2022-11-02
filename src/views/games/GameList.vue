@@ -32,7 +32,19 @@
         </div>
       </div>
     </div>
-    <div class="text-center" v-if="games?.length === 0">No game found</div>
+    <div v-if="games?.length === 0">
+      <CAlert color="warning" class="d-flex align-items-center">
+        <CIcon
+          icon="cil-warning"
+          class="flex-shrink-0 me-2"
+          width="24"
+          height="24"
+        />
+        <div>
+          No result found! Please check category select and search input.
+        </div>
+      </CAlert>
+    </div>
   </div>
 </template>
 
