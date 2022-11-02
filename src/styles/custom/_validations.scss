@@ -1,0 +1,30 @@
+.custom-invalid-feedback {
+  @extend .invalid-feedback;
+  display: block;
+}
+
+// *** datepicker start ***
+// invalid state
+.dp__input_invalid {
+  border-color: $danger !important;
+  box-shadow: none !important;
+}
+// valid state
+.dp__input_valid {
+  border-color: $success !important;
+  box-shadow: none !important;
+}
+// *** datepicker end ***
+
+// *** v-select start ***
+body,
+body.dark-theme {
+  .v-select.is-invalid {
+    --vs-border-color: #{$danger} !important;
+  }
+  .v-select.is-valid {
+    --vs-border-color: #{$success} !important;
+  }
+}
+
+// *** v-select end ***

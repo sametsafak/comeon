@@ -1,0 +1,53 @@
+.btn {
+  &.loading-spinner {
+    // text-indent: -9999px;
+    overflow: hidden;
+    color: transparent;
+    img {
+      visibility: hidden;
+    }
+  }
+
+  &:not(.btn-link, .btn-transparent) {
+    &:hover {
+      color: $white;
+    }
+
+    &.btn-primary,
+    &.btn-info,
+    &.btn-success,
+    &.btn-danger {
+      &,
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &:active,
+    &:focus {
+      color: $white;
+    }
+  }
+
+  &.btn-xs {
+    @include button-size(
+      $btn-padding-y-xs,
+      $btn-padding-x-xs,
+      $btn-font-size-xs,
+      $btn-border-radius-xs
+    );
+  }
+}
+
+// btn-check:checked + .btn:focus, .btn-check:active + .btn:focus, .btn:active:focus, .btn.active:focus, .show > .btn.dropdown-toggle:focus {
+//   box-shadow: 0 0 0 0.25rem var(--cui-btn-shadow);
+// }
+
+.btn-check:checked {
+  &:focus + .btn {
+    box-shadow: 0 0 0 0.15rem var(--cui-btn-shadow);
+  }
+  & + .btn {
+    color: $white;
+  }
+}

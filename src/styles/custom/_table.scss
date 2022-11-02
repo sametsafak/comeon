@@ -1,0 +1,61 @@
+.mm-table {
+  &-vertical-align-middle {
+    th,
+    td {
+      vertical-align: middle;
+    }
+  }
+
+  &-badge-line-height-fix {
+    .badge {
+      line-height: 0.9;
+    }
+  }
+  &-responsive-pagination-fix {
+    .table {
+      margin-bottom: 10px;
+    }
+    .pagination {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+  }
+  &-sort-arrows-position-fix {
+    th span.float-end.me-1 {
+      float: none !important;
+      margin-right: 0 !important;
+      margin-left: 3px;
+    }
+  }
+}
+
+.mm-table-fixes {
+  @extend .mm-table-vertical-align-middle;
+  @extend .mm-table-badge-line-height-fix;
+  @extend .mm-table-responsive-pagination-fix;
+  @extend .mm-table-sort-arrows-position-fix;
+}
+
+.table {
+  .fit-cell {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  // it brokes words in table cells like
+  // this
+  .word-break-cell {
+    word-break: break-word;
+  }
+
+  .letter-break-cell {
+    word-break: break-all;
+  }
+
+  // truncates cells like thi...  <- this
+  .truncate-cell {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

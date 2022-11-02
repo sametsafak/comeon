@@ -1,0 +1,7 @@
+.icon {
+
+  // example usage: <CIcon icon="cilTrash" size="custom-size icon-xs" />
+  &-xs {
+    @include icon-size($icon-size-xs);
+  }
+}

@@ -1,0 +1,31 @@
+// If you want to override variables do it here
+@import "override-coreui-variables";
+
+$enable-ltr: true;
+$enable-rtl: true;
+
+// Import styles
+@import "~@coreui/coreui-pro/scss/coreui";
+@import "~@coreui/coreui-pro/scss/themes/dark";
+
+// Import Chart.js Tooltips
+// @import "~@coreui/chartjs/scss/tooltips";
+
+@import "layout";
+
+// If you want to add something do it here
+@import "custom/variables";
+@import "custom/icons";
+@import "custom/buttons";
+@import "custom/sidebar";
+@import "custom/header";
+@import "custom/layout";
+@import "custom/table";
+@import "custom/typography";
+@import "custom/card";
+@import "custom/list";
+@import "custom/vue-toastification";
+@import "custom/validations";
+@import "custom/global";
+
+$font-size-xs: $font-size-base * .500;

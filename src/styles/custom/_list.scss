@@ -1,0 +1,24 @@
+.notifications-list {
+  a {
+    color: $body-color;
+    text-decoration: none;
+    &:hover {
+      color: $primary;
+    }
+  }
+  .unseen-dot-wrapper {
+    position: absolute;
+    top: 10px;
+    left: -5px;
+  }
+
+  // .list-group-item  {
+  //   padding: 25px 15px;
+  // }
+}
+
+.dark-theme .notifications-list {
+  a {
+    color: var(--cui-link-color, #238ccd);
+  }
+}

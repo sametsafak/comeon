@@ -1,0 +1,80 @@
+.sidebar {
+  .sidebar-nav {
+    a,
+    .nav-link {
+      white-space: break-spaces;
+      text-decoration: none !important;
+    }
+  }
+
+  .wide-logo {
+    width: 138px;
+  }
+
+  .narrow-logo {
+    display: none;
+    width: 40px;
+  }
+
+  &.sidebar-narrow-unfoldable:not(:hover)  {
+    .wide-logo, .growth-pipe, .growth-text {
+      display: none;
+    }
+    .narrow-logo {
+      display: block;
+    }
+  }
+}
+
+
+// sidebar specific scroll style START
+.sidebar-nav {
+  /* width */
+  &::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, 0.35);
+    border: solid 2px transparent;
+
+    background: transparent;
+    border-radius: 6px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 10px 10px rgba(255, 255, 255, 0.45);
+    border: solid 2px transparent;
+
+    background: transparent;
+  }
+}
+.dark-theme {
+  .sidebar-nav {
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 10px 10px rgb(96, 96, 105);
+      background: transparent;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      box-shadow: inset 0 0 10px 10px rgb(127, 128, 134);
+      background: transparent;
+    }
+  }
+}
+// sidebar specific scroll style END

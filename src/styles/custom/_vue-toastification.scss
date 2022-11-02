@@ -1,0 +1,12 @@
+.Vue-Toastification__close-button {
+  position: relative;
+  top: -3px;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    .Vue-Toastification__container.top-right {
+      top: 70px;
+    }
+  }
+}
