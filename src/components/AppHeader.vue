@@ -115,20 +115,8 @@ export default {
 
 <style lang="scss">
 .header {
-  .my-header-logo {
-    height: 42px;
-    display: flex;
-    align-items: center;
-    padding-bottom: 8px;
-  }
-  .growth-pipe {
-    padding-bottom: 4px;
-  }
   .header-big-logo {
     width: 140px;
-  }
-  .header-small-logo {
-    width: 30px;
   }
   .theme-selector-wrapper {
     padding-top: 1px;

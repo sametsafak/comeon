@@ -8,26 +8,12 @@
     @visible-change="UPDATE_SIDEBAR_VISIBLE({ value: $event })"
   >
     <CSidebarBrand>
-      <!-- <CIcon
-        custom-class-name="sidebar-brand-full"
-        :icon="logoNegative"
-        :height="35"
-      />
-      <CIcon
-        custom-class-name="sidebar-brand-narrow"
-        :icon="sygnet"
-        :height="35"
-      /> -->
       <router-link
         to="/"
         class="d-flex align-items-center text-decoration-none"
       >
         <img src="@/assets/brand/logo.svg" alt="comeon" class="wide-logo" />
-        <img
-          src="@/assets/brand/logo-dark.svg"
-          alt="comeon"
-          class="narrow-logo"
-        />
+        <img src="@/assets/brand/logo.svg" alt="comeon" class="narrow-logo" />
       </router-link>
     </CSidebarBrand>
     <AppSidebarNav :current-member-acl="acl" />
