@@ -104,16 +104,33 @@ const actions = {
     })
   },
 
-  async LOGOUT_MEMBER(context) {
+  async LOGOUT_MEMBER(context, payload) {
     return new Promise((resolve, reject) => {
       memberApi
         .logout('eric')
         .then((res) => {
           resolve(res)
           context.commit('CLEAR_AUTH')
-          router.push({
-            path: '/pages/login',
-          })
+
+          // if payload.redirectAfterLogin is provided, add it as queryparam to refirect it after login
+          let queryForRedirect = null
+          if (
+            payload?.redirectAfterLogin &&
+            router.options.history.location !== '/'
+          ) {
+            queryForRedirect = {
+              redirectAfterLogin: router.options.history.location,
+            }
+          }
+
+          // redirect user to login with queryparam if necessary
+          let noRedirectPages = ['/pages/login']
+          if (!noRedirectPages.includes(router.currentRoute.value.fullPath)) {
+            router.push({
+              path: '/pages/login',
+              ...(queryForRedirect && { query: queryForRedirect }),
+            })
+          }
         })
         .catch((error) => {
           reject(error)
