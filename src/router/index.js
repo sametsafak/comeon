@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import store from '@/store'
-
 import { debounce } from 'lodash'
 
+import store from '@/store'
 import errorHandler from '@/helpers/error-handler'
 
 import routes from './routes'

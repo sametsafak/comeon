@@ -8,7 +8,6 @@
     :visible="visible"
   >
     <CDropdownToggle placement="bottom-end" class="py-0 px-0" :caret="false">
-      <!-- <CAvatar :src="avatar" size="md" /> -->
       <CAvatar :src="getImgUrl(member?.avatar)" size="md" />
     </CDropdownToggle>
     <CDropdownMenu
@@ -21,7 +20,6 @@
       >
         <div class="d-flex">
           <span class="me-2">Account</span>
-          <!-- <LeftDaysInTrial /> -->
         </div>
       </CDropdownHeader>
       <div
@@ -65,7 +63,6 @@
 <script>
 import avatar from '@/assets/images/avatar/default-user.png'
 import AppHeaderThemeSelector from './AppHeaderThemeSelector'
-// import LeftDaysInTrial from './LeftDaysInTrial'
 import getImgUrl from '@/helpers/get-img-helper'
 
 import { mapState, mapActions } from 'vuex'
@@ -73,12 +70,10 @@ export default {
   name: 'AppHeaderDropdownAccnt',
   components: {
     AppHeaderThemeSelector,
-    // LeftDaysInTrial,
   },
   data() {
     return {
-      avatar: avatar,
-      itemsCount: 7,
+      avatar,
       visible: null,
       getImgUrl,
     }
@@ -94,7 +89,7 @@ export default {
     },
     checkIfDropdownShouldBeHidden(e) {
       // if a link or dropdown item clicked, hide the dropdown
-      // if item not a dropdown item, do nothing
+      // if clicked item is not a dropdown item, do nothing
       if (e.target.closest('.dropdown-item')) {
         this.visible = false
       }
@@ -102,10 +97,6 @@ export default {
   },
   computed: {
     ...mapState('memberModule', ['acl', 'member']),
-    ...mapState('notificationModule', ['unseenCount']),
-    showSettings() {
-      return this.isRadarClient || this.isShopifyClient
-    },
   },
 }
 </script>

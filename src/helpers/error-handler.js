@@ -81,7 +81,6 @@ const errorHandler = (error, showToast = true, toastType = 'error') => {
     case 500:
       // we don't have to redirect user to 500 page in every response has status 500
       // therefore we are handling this edge case in related request block. not in here.
-      // console.error(error.response.status, error.message)
       toastErrorText = GenericError
       break
   }
