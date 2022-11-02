@@ -1,4 +1,4 @@
-// DEV acl can see every menu item in sidebar menu
+// DEV acl can see every menu item in sidebar menu, (can be opened from header)
 export default [
   {
     name: 'Games',
