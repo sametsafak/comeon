@@ -1,4 +1,7 @@
 const getImgUrl = (pic) => {
+  if (!pic) {
+    return null
+  }
   return require('@/assets/' + pic)
 }
 
